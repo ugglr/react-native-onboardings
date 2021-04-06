@@ -1,22 +1,20 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {useColorScheme} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
 
+import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import AuthScreen from './src/screens/auth/AuthScreen';
-import Walkthrough from './src/screens/onboarding1/Walkthrough';
+// import Walkthrough from './src/screens/onboarding1/Walkthrough';
 
 import Onboarding2 from './src/screens/onboarding2/Onboarding';
 import Welcome from './src/screens/onboarding2/Welcome';
+import AuthScreen from './src/screens/auth/AuthScreen';
 
 const Stack = createStackNavigator();
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  console.log('isDarkMode', isDarkMode);
+  // TODO: Implement darkmode
+  // const isDarkMode = useColorScheme() === 'dark';
 
   return (
     <NavigationContainer>
@@ -26,7 +24,16 @@ const App = () => {
           component={Onboarding2}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen
+          name="Welcome"
+          component={Welcome}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Login"
+          component={AuthScreen}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

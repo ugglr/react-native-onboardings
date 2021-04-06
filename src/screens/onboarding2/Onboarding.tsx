@@ -88,6 +88,7 @@ const Onboarding = ({navigation}) => {
           ref={scroll}
           horizontal
           pagingEnabled
+          bounces={false}
           snapToInterval={responsive.windowWidth}
           decelerationRate="fast"
           showsHorizontalScrollIndicator={false}

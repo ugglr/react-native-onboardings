@@ -12,6 +12,7 @@ import * as coffeeAndBiscuitLottie from '../../assets/lotties/coffeeAndBiscuit.j
 
 const styles = StyleSheet.create({
   screenContainer: {
+    backgroundColor: 'white',
     height: '100%',
     paddingHorizontal: responsive.sideMargin,
     width: '100%',

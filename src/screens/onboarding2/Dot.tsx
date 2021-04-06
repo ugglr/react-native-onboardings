@@ -18,8 +18,6 @@ type DotProps = {
 };
 
 const Dot = ({index, currentIndex}: DotProps): React.ReactElement => {
-  console.log('index', index);
-  console.log('currentIndex', currentIndex);
   const opacity = currentIndex.interpolate({
     inputRange: [index - 1, index, index + 1],
     outputRange: [0.5, 1, 0.5],
