@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Onboarding = () => {
+const Onboarding = ({navigation}) => {
   const scroll = useRef<Animated.ScrollView>(null);
   const animatedValue = useRef(new Animated.Value(0)).current;
   const animatedBackground = animatedValue.interpolate({
@@ -153,6 +153,7 @@ const Onboarding = () => {
                 }
               }}
               last={index === slides.length - 1}
+              lastOnPress={() => navigation.navigate('Welcome')}
               {...{subtitle, description}}
             />
           ))}

@@ -31,9 +31,16 @@ type Props = {
   description: string;
   last: boolean;
   onPress: () => void;
+  lastOnPress: () => void;
 };
 
-const SubSlide = ({subtitle, description, last, onPress}: Props) => {
+const SubSlide = ({
+  subtitle,
+  description,
+  last,
+  onPress,
+  lastOnPress,
+}: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.subtitle}>{subtitle}</Text>
@@ -41,7 +48,7 @@ const SubSlide = ({subtitle, description, last, onPress}: Props) => {
       <Button
         label={last ? "Let's get started" : 'Next'}
         variant={last ? 'primary' : 'default'}
-        onPress={onPress}
+        onPress={last ? lastOnPress : onPress}
       />
     </View>
   );
